@@ -43,7 +43,7 @@ def initializing_df(start_date, end_date): #tested, all good
     df.rename(columns = {'public_date': 'jdate'}, inplace = True)
     mask = (df['jdate'] >= start_date) & (df['jdate'] <= end_date)
     df = df.loc[mask]
-#     df = df[(df['sp400_sort'] == 1)|(df['sp500_sort'] == 1)|(df['sp600_sort'] == 1)]
+    df = df[(df['sp400_sort'] == 1)|(df['sp500_sort'] == 1)|(df['sp600_sort'] == 1)]
     df['me'] = np.log(df['me'])
 
     return df, x_raw, x_rank, x_raw_fac, x_rank_fac
